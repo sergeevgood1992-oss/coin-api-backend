@@ -3,7 +3,7 @@ from datetime import datetime
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)  # 👈 Разрешаем все CORS-запросы (для теста)
+CORS(app)
 
 @app.route('/api/log', methods=['GET'])
 def log_event():
@@ -31,4 +31,4 @@ def log_event():
     })
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)  # ← ЭТА СТРОКА ИЗМЕНЕНА
